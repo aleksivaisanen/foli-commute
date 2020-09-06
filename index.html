@@ -24,12 +24,26 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm">
-                <h1 class="mt-3">Työmatka Fölin kyydissä</h1>
+            <h1 class="mt-3">Työmatka Fölin kyydissä</h1>
+            <div class="col-sm-6">
                 <div class="mt-3 mb-3">
-                    <label for="firstStop" class="form-label">Pysäkki 1</label>
+                    <label for="firstStop" class="form-label">Pysäkki</label>
                     <input type="text" class="form-control" id="firstStop" placeholder="Pysäkin numero, esim. 130">
                 </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="mt-3 mb-3">
+                    <label for="firstLine" class="form-label">Linjan numero</label>
+                    <input type="text" class="form-control" id="firstLine"
+                        placeholder="Halutun linjan numero, esim. 801">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p>Pysäkin aikataulut</p>
+                <ul class="list-group" id="firstStopList">
+                </ul>
             </div>
         </div>
     </div>
