@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Föli commuting</title>
+    <title>Työmatka Fölin kyydissä</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="mt-3 mb-3">
+                <div class="mb-3">
                     <label for="firstLine" class="form-label">Linjan numero</label>
                     <input type="text" class="form-control" id="firstLine"
                         placeholder="Halutun linjan numero, esim. 801">
@@ -42,8 +42,16 @@
         <div class="row">
             <div class="col-sm">
                 <p>Pysäkin aikataulut</p>
-                <ul class="list-group" id="firstStopList">
-                </ul>
+                <table class="table" id="stopTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Linja</th>
+                            <th scope="col">Arvioitu saapuminen pysäkille</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

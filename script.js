@@ -67,21 +67,20 @@ const renderResults = (data = null) => {
     } else {
         data = state.searchTerms[state.currentStopNumber]
     }
-    const firstStopList = document.getElementById("firstStopList")
-    //clear previous li-items
-    while (firstStopList.firstChild) {
-        firstStopList.removeChild(firstStopList.firstChild)
-    }
 
     //append new data
-    data.result.slice(0, 10).map(result => {
+    const newTBody = document.createElement('tbody');
+    const oldTBody = document.querySelector("tbody")
+    data.result.slice(0, 8).map(result => {
         if (result.lineref === state.line || state.line === "") {
             const arrivalTime = new Date(result.expectedarrivaltime * 1000)
             const arrivalTimeFormatted = arrivalTime.getHours() + ":" + arrivalTime.getMinutes() + ":" + arrivalTime.getSeconds()
-            const li = document.createElement("li");
-            li.appendChild(document.createTextNode(result.lineref + " " + arrivalTimeFormatted))
-            li.setAttribute("class", "list-group-item")
-            firstStopList.appendChild(li)
+            const row = newTBody.insertRow(-1);
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            cell1.innerHTML = result.lineref;
+            cell2.innerHTML = arrivalTimeFormatted;
         }
     })
+    oldTBody.parentNode.replaceChild(newTBody, oldTBody)
 }
