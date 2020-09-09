@@ -54,7 +54,7 @@ const validateStopNumber = () => {
 
 const fetchStopData = async function () {
     try {
-        const response = await fetch("http://data.foli.fi/siri/sm/" + state.currentStopNumber);
+        const response = await fetch("https://data.foli.fi/siri/sm/" + state.currentStopNumber);
         return response.json();
     } catch (e) {
         console.error("Fetch failed", e)
